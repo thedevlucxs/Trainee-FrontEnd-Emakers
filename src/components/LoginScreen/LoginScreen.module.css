@@ -11,15 +11,15 @@ form {
 }
 
 .formSection {
-  width: 400px; /* largura fixa ou max-width */
+  width: 400px;
   max-width: 100vw;
   background-color: #fbf8f4;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* alinha conteúdo à esquerda */
+  align-items: flex-start;
   gap: 1rem;
-  padding: 2rem; /* opcional, para espaçamento interno */
+  padding: 2rem;
 }
 
 .imageSection {
@@ -41,7 +41,6 @@ form {
 }
 
 .inputField {
-  /* Use aqui as dimensões, border-radius, cores, etc. do Figma */
   height: 50px;
   border: none;
   border-radius: 8px;
@@ -51,8 +50,8 @@ form {
 }
 
 .mainHeading {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.875rem;
+  font-weight: normal;
   color: #4b626c;
   margin-bottom: 2rem;
   display: flex;

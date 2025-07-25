@@ -1,0 +1,228 @@
+/* Container principal da página */
+.pageContainer {
+  background-color: #fbf8f4;
+  color: #4b626c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Header com fundo branco e borda inferior */
+.header {
+  width: 100%;
+  background-color: #fbf8f4;
+  color: #4b626c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Links do Header com texto escuro */
+.nav a {
+  color: #4b626c;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.nav a:hover {
+  color: #3a4b52;
+}
+
+/* Barra divisória azul entre os links */
+.separator {
+  width: 1px;
+  height: 20px;
+  background-color: #4b626c;
+}
+
+.logo {
+  height: 40px;
+}
+
+/* Container da Barra de Busca */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #4b626c;
+  font-family: inherit;
+  font-size: 0.9rem;
+  width: 150px;
+}
+
+.searchInput::placeholder {
+  color: #b1c9d2;
+}
+
+/* Conteúdo Principal */
+.mainContent {
+  display: flex;
+  flex: 1;
+}
+
+/* Coluna da Esquerda: Informações do Usuário */
+.userInfo {
+  flex: 2;
+  padding: 3rem 4rem;
+  background-color: #fbf8f4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.userInfo h2 {
+  font-weight: 400;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.userInfo p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #5c7a89;
+  margin: 0.25rem 0;
+}
+
+.actionButtons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.actionButton {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #4b626c;
+  background-color: transparent;
+  color: #4b626c;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #4b626c;
+  color: #fbf8f4;
+}
+
+.destructiveButton {
+  border-color: #c94d4d;
+  color: #c94d4d;
+}
+
+.destructiveButton:hover {
+  background-color: #c94d4d;
+  color: #fbf8f4;
+}
+
+.disabledButton {
+  background-color: #ccc;
+  color: #888;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.disabledButton:hover {
+  background-color: #ccc;
+  color: #888;
+}
+
+/* Coluna da Direita: Jogos */
+.gamesInfo {
+  flex: 1;
+  background-color: #4b626c;
+  padding: 3rem;
+  color: #fbf8f4;
+  position: relative;
+}
+
+.gamesInfo h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.gamesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.gameCard {
+  background: transparent;
+  color: #fbf8f4;
+}
+
+.gameCard img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.gameCard p,
+.gameCard a {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.gameCard a {
+  color: #fbf8f4;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.gameCard a:hover {
+  color: #dcd3c9;
+}
+
+/* Link do carrinho sem fundo */
+.cartLink {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cartLink:hover {
+  transform: scale(1.1);
+}
+
+.cartLink img {
+  width: 30px;
+  height: 30px;
+}

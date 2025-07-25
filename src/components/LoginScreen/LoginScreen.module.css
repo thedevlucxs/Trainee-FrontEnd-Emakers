@@ -69,6 +69,11 @@ form {
   font-size: 1rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  color: #333;
+}
+
+.campoInput::placeholder {
+  color: #999;
 }
 
 .botaoLogin {

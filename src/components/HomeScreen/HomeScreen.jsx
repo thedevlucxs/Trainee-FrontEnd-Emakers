@@ -4,6 +4,9 @@ import styles from "./HomeScreen.module.css";
 // Importando os ícones da pasta assets
 import logoIcon from "../../assets/icon.svg";
 import carrinhoLogo from "../../assets/carrinhoLogo.svg";
+import lapisIcon from "../../assets/Lápis.svg";
+import lixeiraIcon from "../../assets/Lixeira.svg";
+import lupaIcon from "../../assets/Lupa.svg";
 
 // Imagens dos jogos
 import spongebobImage from "../../assets/spongebob.png";
@@ -46,6 +49,7 @@ function HomeScreen() {
         </nav>
         <div className={styles.searchContainer}>
           <input type="text" placeholder="" className={styles.searchInput} />
+          <img src={lupaIcon} alt="Pesquisar" />
         </div>
       </header>
       <main className={styles.mainContent}>
@@ -55,11 +59,15 @@ function HomeScreen() {
           <p>Seu CPF é 123.456.789-00</p>
 
           <div className={styles.actionButtons}>
-            <button className={styles.actionButton}>Alterar Dados</button>
+            <button className={styles.actionButton}>
+              Alterar Dados
+              <img src={lapisIcon} alt="Alterar Dados" />
+            </button>
             <button
               className={`${styles.actionButton} ${styles.destructiveButton}`}
             >
               Excluir Conta
+              <img src={lixeiraIcon} alt="Excluir Conta" />
             </button>
             <button
               className={`${styles.actionButton} ${styles.disabledButton}`}

@@ -24,14 +24,15 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 4rem;
 }
 
 /* Links do Header com texto escuro */
 .nav a {
   color: #4b626c;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 2.4rem;
+  font-weight: 300;
   padding: 0.5rem 0;
 }
 
@@ -86,7 +87,7 @@
 /* Conteúdo Principal */
 .mainContent {
   display: flex;
-  flex: 1;
+  flex: 2;
 }
 
 /* Coluna da Esquerda: Informações do Usuário */
@@ -102,13 +103,13 @@
 
 .userInfo h2 {
   font-weight: 400;
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
 .userInfo p {
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 2rem;
   color: #4b626c;
   margin: 0.25rem 0;
 }
@@ -122,19 +123,22 @@
 }
 
 .actionButton {
-  padding: 0.8rem 1.5rem;
   border-radius: 8px;
   border: 1px solid #4b626c;
-  background-color: #4b626c; /* Cor de fundo alterada */
-  color: #fbf6f0; /* Cor do texto alterada */
+  background-color: #4b626c;
+  color: #fbf6f0;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
+  font-family: inherit;
+  font-size: 1.875rem;
+  font-weight: 400;
   transition: opacity 0.2s;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 200px;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  width: 270px;
+  height: 45px;
 }
 
 .actionButton img {
@@ -181,8 +185,8 @@
 }
 
 .gamesInfo h3 {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 2rem;
 }
 
@@ -200,7 +204,8 @@
 }
 
 .gameCard img {
-  width: 100%;
+  width: 190px;
+  height: 250px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 8px;
@@ -211,6 +216,10 @@
 .gameCard a {
   margin: 0.25rem 0;
   font-size: 0.9rem;
+  min-height: 2rem; /* Garante a mesma altura mínima */
+  display: flex; /* Permite o alinhamento vertical */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
 }
 
 .gameCard a {
@@ -228,8 +237,8 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -246,6 +255,6 @@
 }
 
 .cartLink img {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
 }

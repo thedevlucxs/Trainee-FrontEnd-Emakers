@@ -1,0 +1,85 @@
+.footer {
+  /* Cor de fundo alterada */
+  background-color: #97a4a2;
+  /* Cor de texto principal alterada */
+  color: #fbf8f3;
+  padding: 2rem 4rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+  /* Cor da borda alterada para combinar com o novo texto */
+  border-bottom: 1px solid #fbf8f3;
+}
+
+.gameDameInfo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+  margin-right: 1.5rem;
+}
+
+.infoText h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.infoText p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.explore,
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore h4,
+.contact h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Cor dos links e parágrafos alterada */
+.explore a,
+.contact p {
+  color: #fbf8f3;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.explore a:hover {
+  text-decoration: underline;
+}
+
+.contact p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* Cor específica para o texto de copyright */
+.copyright p {
+  margin: 0;
+  color: #4b626c;
+}

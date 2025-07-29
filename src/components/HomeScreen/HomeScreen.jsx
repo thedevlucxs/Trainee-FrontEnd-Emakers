@@ -1,18 +1,17 @@
 import React from "react";
 import styles from "./HomeScreen.module.css";
+import Navbar from "../Navbar/Navbar"; // Importe o novo componente
 
 // Importando os ícones da pasta assets
-import logoIcon from "../../assets/icon.svg";
-import carrinhoLogo from "../../assets/carrinhoLogo.svg";
-import lapisIcon from "../../assets/Lápis.svg";
-import lixeiraIcon from "../../assets/Lixeira.svg";
-import lupaIcon from "../../assets/Lupa.svg";
+import carrinhoLogo from "../../assets/icons/carrinhoLogo.svg";
+import lapisIcon from "../../assets/icons/Lápis.svg";
+import lixeiraIcon from "../../assets/icons/Lixeira.svg";
 
 // Imagens dos jogos
-import spongebobImage from "../../assets/spongebob.png";
-import deliverUsMarsImage from "../../assets/deliver-us-mars.png";
-import godOfWarImage from "../../assets/god-of-war.png";
-import deathStrandingImage from "../../assets/death-stranding.png";
+import spongebobImage from "../../assets/vertical/spongebob.png";
+import deliverUsMarsImage from "../../assets/vertical/deliver-us-mars.png";
+import godOfWarImage from "../../assets/vertical/god-of-war.png";
+import deathStrandingImage from "../../assets/vertical/death-stranding.png";
 
 const games = [
   { id: 1, title: "SpongeBob", progress: "100/100", imageUrl: spongebobImage },
@@ -31,27 +30,12 @@ const games = [
   },
 ];
 
-function HomeScreen() {
+// 1. Receba a propriedade { onNavigate }
+function HomeScreen({ onNavigate }) {
   return (
     <div className={styles.pageContainer}>
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <img src={logoIcon} alt="Logo" className={styles.logo} />
-          <a href="#">Lançamentos</a>
-          <span className={styles.separator}></span>
-          <a href="#">Populares</a>
-          <span className={styles.separator}></span>
-          <a href="#">Gêneros</a>
-          <span className={styles.separator}></span>
-          <a href="#">Promoções</a>
-          <span className={styles.separator}></span>
-          <a href="#">Conta</a>
-        </nav>
-        <div className={styles.searchContainer}>
-          <input type="text" placeholder="" className={styles.searchInput} />
-          <img src={lupaIcon} alt="Pesquisar" />
-        </div>
-      </header>
+      {/* 2. Passe a propriedade para a Navbar */}
+      <Navbar onNavigate={onNavigate} />
       <main className={styles.mainContent}>
         <section className={styles.userInfo}>
           <h2>Olá, {"<<Nome do Usuário>>"}</h2>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./LoginScreen.module.css";
-import tema from "../../assets/tema.svg";
-import setaLogin from "../../assets/setaLogin.svg";
+import tema from "../../assets/icons/tema.svg";
+import setaLogin from "../../assets/icons/setaLogin.svg";
 
 // 1. Receba a propriedade { onLoginSuccess } que o App está enviando
 function LoginScreen({ onLoginSuccess }) {

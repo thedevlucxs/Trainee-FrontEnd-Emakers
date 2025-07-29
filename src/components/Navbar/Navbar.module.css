@@ -1,0 +1,75 @@
+/* Header com fundo branco e borda inferior */
+.header {
+  width: 100%;
+  background-color: #fbf8f4;
+  color: #4b626c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Links do Header com texto escuro */
+.nav a {
+  color: #4b626c;
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 300;
+  padding: 0.5rem 0;
+}
+
+.nav a:hover {
+  color: #3a4b52;
+}
+
+/* Barra divisória azul entre os links */
+.separator {
+  width: 1px;
+  height: 20px;
+  background-color: #4b626c;
+}
+
+.logo {
+  height: 100px;
+}
+
+/* Container da Barra de Busca */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #97a4a273; /* Cor de fundo alterada */
+  border: 1px solid #97a4a273;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+}
+
+.searchContainer img {
+  width: 16px;
+  height: 16px;
+  order: 1; /* Move o ícone para o final */
+  margin-left: 0.5rem;
+  /* Para a cor da lupa, o ideal seria editar o SVG para ter a cor #FBF6F0 */
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #333; /* Cor do texto alterada */
+  font-family: inherit;
+  font-size: 0.9rem;
+  width: 150px;
+}
+
+.searchInput::placeholder {
+  color: #fbf6f0;
+  opacity: 0.7;
+}

@@ -3,27 +3,40 @@ import styles from "./Navbar.module.css";
 import logoIcon from "../../assets/icons/icon.svg";
 import lupaIcon from "../../assets/icons/Lupa.svg";
 
-// A Navbar agora recebe a prop 'onNavigate' do App.jsx
 function Navbar({ onNavigate }) {
-  // Função para lidar com o clique e chamar o onNavigate
   const handleAccountClick = (event) => {
-    event.preventDefault(); // Impede o comportamento padrão do link
-    onNavigate("profile"); // Diz ao App para mudar a página para 'profile'
+    event.preventDefault();
+    onNavigate("profile");
+  };
+
+  const handleReleasesClick = (event) => {
+    event.preventDefault();
+    onNavigate("store");
+  };
+
+  // Função para navegar para a tela PopularScreen
+  const handlePopularClick = (event) => {
+    event.preventDefault();
+    onNavigate("popular");
   };
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <img src={logoIcon} alt="Logo" className={styles.logo} />
-        <a href="#">Lançamentos</a>
+        <a href="#" onClick={handleReleasesClick}>
+          Lançamentos
+        </a>
         <span className={styles.separator}></span>
-        <a href="#">Populares</a>
+        {/* Adicionado o onClick ao link de Populares */}
+        <a href="#" onClick={handlePopularClick}>
+          Populares
+        </a>
         <span className={styles.separator}></span>
         <a href="#">Gêneros</a>
         <span className={styles.separator}></span>
         <a href="#">Promoções</a>
         <span className={styles.separator}></span>
-        {/* Adiciona o onClick para chamar a função de navegação */}
         <a href="#" onClick={handleAccountClick}>
           Conta
         </a>

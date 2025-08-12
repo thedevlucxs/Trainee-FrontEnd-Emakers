@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./HomeScreen.module.css";
 import Navbar from "../Navbar/Navbar"; // Importe o novo componente
+import Footer from "../Footer/Footer"; // Importando o Footer
 
 // Importando os ícones da pasta assets
 import carrinhoLogo from "../../assets/icons/carrinhoLogo.svg";
@@ -32,6 +33,12 @@ const games = [
 
 // 1. Receba a propriedade { onNavigate }
 function HomeScreen({ onNavigate }) {
+  // Função para lidar com o clique do botão de excluir conta
+  const handleDeleteAccount = () => {
+    // Adicione aqui a lógica para excluir a conta se necessário
+    onNavigate("login"); // Navega para a tela de login
+  };
+
   return (
     <div className={styles.pageContainer}>
       {/* 2. Passe a propriedade para a Navbar */}
@@ -49,6 +56,7 @@ function HomeScreen({ onNavigate }) {
             </button>
             <button
               className={`${styles.actionButton} ${styles.destructiveButton}`}
+              onClick={handleDeleteAccount} // Adicionado o onClick
             >
               Excluir Conta
               <img src={lixeiraIcon} alt="Excluir Conta" />
@@ -81,6 +89,7 @@ function HomeScreen({ onNavigate }) {
           </a>
         </aside>
       </main>
+      <Footer /> {/* Footer adicionado */}
     </div>
   );
 }

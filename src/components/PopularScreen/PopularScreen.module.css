@@ -1,0 +1,109 @@
+.pageContainer {
+  background-color: #fbf8f4;
+  color: #4b626c;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mainContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 4rem 6rem 4rem;
+  position: relative;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4b626c;
+  padding-bottom: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.gamesList {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.gameCard {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Estilo para alternar a ordem */
+.gameCard.reverse {
+  flex-direction: row-reverse;
+}
+
+.imageContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.gameImage {
+  width: 480px;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+.rankBadge {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background-color: #4b626c;
+  color: #fbf8f4;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.textContainer h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.textContainer p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cartButton {
+  position: absolute;
+  bottom: 10px; /* Posição na parte inferior */
+  right: 10px; /* Afastado da borda direita */
+  width: 75px;
+  height: 75px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.cartButton:hover {
+  transform: scale(1.1);
+}
+
+.cartButton img {
+  width: 75px;
+  height: 75px;
+}

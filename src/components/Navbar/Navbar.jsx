@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import logoIcon from "../../assets/icons/icon.svg";
-import lupaIcon from "../../assets/icons/Lupa.svg";
 
 function Navbar({ onNavigate }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +58,6 @@ function Navbar({ onNavigate }) {
             placeholder="Pesquisar..."
             className={styles.searchInput}
           />
-          <img src={lupaIcon} alt="Pesquisar" />
         </div>
       </nav>
     </header>

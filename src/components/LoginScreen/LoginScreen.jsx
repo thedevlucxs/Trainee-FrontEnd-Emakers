@@ -3,17 +3,25 @@ import styles from "./LoginScreen.module.css";
 import tema from "../../assets/icons/tema.svg";
 import setaLogin from "../../assets/icons/setaLogin.svg";
 
-// 1. Receba a propriedade { onLoginSuccess } que o App está enviando
-function LoginScreen({ onLoginSuccess }) {
+// Recebe onLoginSuccess para ir para a loja e onNavigate para as outras telas
+function LoginScreen({ onLoginSuccess, onNavigate }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // 2. Crie a função handleSubmit
   const handleSubmit = (event) => {
-    // Impede o recarregamento da página
     event.preventDefault();
-    // Chama a função que veio do App.jsx para trocar de tela
     onLoginSuccess();
+  };
+
+  // Funções para navegar para as novas telas
+  const handleNavigateToCreateAccount = (event) => {
+    event.preventDefault();
+    onNavigate("createAccount");
+  };
+
+  const handleNavigateToForgotPassword = (event) => {
+    event.preventDefault();
+    onNavigate("forgotPassword");
   };
 
   return (
@@ -21,7 +29,6 @@ function LoginScreen({ onLoginSuccess }) {
       <div className={styles.formSection}>
         <h1 className={styles.mainHeading}>Login</h1>
 
-        {/* 3. Conecte a função ao "onSubmit" do formulário */}
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -46,8 +53,12 @@ function LoginScreen({ onLoginSuccess }) {
         </form>
 
         <div className={styles.linksContainer}>
-          <a href="#">Criar Conta</a>
-          <a href="#">Esqueceu a Senha?</a>
+          <a href="#" onClick={handleNavigateToCreateAccount}>
+            Criar Conta
+          </a>
+          <a href="#" onClick={handleNavigateToForgotPassword}>
+            Esqueceu a Senha?
+          </a>
         </div>
       </div>
 

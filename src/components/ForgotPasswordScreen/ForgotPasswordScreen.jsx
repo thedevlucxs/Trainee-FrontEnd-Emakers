@@ -6,7 +6,6 @@ import setaLogin from "../../assets/icons/setaLogin.svg";
 function ForgotPasswordScreen({ onNavigate }) {
   const [email, setEmail] = useState("");
 
-  // A seta volta para a tela de login
   const handleNavigateToLogin = (event) => {
     event.preventDefault();
     onNavigate("login");

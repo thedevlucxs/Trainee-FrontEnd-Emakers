@@ -161,9 +161,11 @@ const newReleases = [
 ];
 
 function StoreScreen({ onNavigate }) {
+  //armazena os slides do carrossel principal
   const [heroSlides, setHeroSlides] = useState([]);
 
   useEffect(() => {
+    //embaralha os jogos e agrupa em 3, deixando a tela principal dinâmica
     const shuffle = (array) => [...array].sort(() => Math.random() - 0.5);
     const slidesData = [];
     const numSlides = Math.floor(allHeroGames.length / 3);
@@ -177,7 +179,7 @@ function StoreScreen({ onNavigate }) {
       });
     }
     setHeroSlides(slidesData);
-  }, []);
+  }, []); //garante que o efeito só rode uma vez ao montar o componente
 
   const heroSettings = {
     dots: true,
@@ -189,6 +191,7 @@ function StoreScreen({ onNavigate }) {
   };
 
   const releasesSettings = {
+    //responsividade
     dots: false,
     infinite: true,
     speed: 500,
@@ -210,7 +213,10 @@ function StoreScreen({ onNavigate }) {
     ],
   };
 
-  const renderGameCard = (game, cardStyle) => (
+  const renderGameCard = (
+    game,
+    cardStyle //função para renderizar os cards de jogos sem precisar repetir código
+  ) => (
     <div className={`${styles.heroCard} ${cardStyle}`}>
       <img src={game.image} alt={game.title} />
       <div className={styles.priceBox}>
@@ -228,8 +234,12 @@ function StoreScreen({ onNavigate }) {
       <main className={styles.mainContent}>
         <section className={styles.heroSection}>
           <Slider {...heroSettings}>
+            {" "}
+            //usa as configurações para gerar o carrossel
             {heroSlides.map((slide, index) => (
               <div key={index} className={styles.heroGrid}>
+                {" "}
+                //slide principal com 3 jogos
                 <div className={styles.heroGridLeft}>
                   {renderGameCard(slide.sideTop, styles.heroCardSmall)}
                   {renderGameCard(slide.sideBottom, styles.heroCardSmall)}
@@ -243,6 +253,8 @@ function StoreScreen({ onNavigate }) {
         </section>
 
         <div className={styles.releasesContainer}>
+          {" "}
+          //lançamentos
           <section className={styles.releasesSection}>
             <h2 className={styles.sectionTitle}>Lançamentos</h2>
             <Slider {...releasesSettings}>

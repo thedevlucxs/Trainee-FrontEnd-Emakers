@@ -3,6 +3,7 @@ import styles from "./CreateAccountScreen.module.css";
 import tema from "../../assets/icons/tema.svg";
 import setaLogin from "../../assets/icons/setaLogin.svg";
 
+// Recebe a propriedade onNavigate para poder voltar à tela de login
 function CreateAccountScreen({ onNavigate }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

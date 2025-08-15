@@ -27,6 +27,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -57,7 +79,7 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s; /* CORRIGIDO */
+  transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;

@@ -1,4 +1,3 @@
-/* Container principal da página */
 .pageContainer {
   background-color: #fbf8f4;
   color: #4b626c;
@@ -8,13 +7,12 @@
   font-family: "Montserrat", sans-serif, Arial;
 }
 
-/* Conteúdo Principal */
 .mainContent {
   display: flex;
   flex: 2;
+  flex-direction: row;
 }
 
-/* Coluna da Esquerda: Informações do Usuário */
 .userInfo {
   flex: 1.4;
   padding: 3rem 4rem;
@@ -72,7 +70,6 @@
 .actionButton img {
   width: 16px;
   height: 16px;
-  /* O ícone SVG precisa ter a cor #FBF6F0 para combinar */
 }
 
 .actionButton:hover {
@@ -81,8 +78,7 @@
 
 .destructiveButton {
   border-color: #4b626c;
-  background-color: #4b626c; /* Fundo vermelho */
-  color: #fbf6f0; /* Texto claro */
+  background-color: #4b626c;
 }
 
 .destructiveButton:hover {
@@ -91,11 +87,11 @@
 }
 
 .disabledButton {
-  background-color: #97a4a273; /* Cor de fundo alterada */
-  color: #fbf6f0; /* Cor do texto alterada */
-  border-color: #97a4a273; /* Cor da borda alterada */
+  background-color: #97a4a273;
+  color: #fbf6f0;
+  border-color: #97a4a273;
   cursor: not-allowed;
-  justify-content: center; /* Centraliza o texto quando não há ícone */
+  justify-content: center;
 }
 
 .disabledButton:hover {
@@ -103,7 +99,6 @@
   background-color: #97a4a273;
 }
 
-/* Coluna da Direita: Jogos */
 .gamesInfo {
   flex: 1;
   background-color: #4b626c;
@@ -140,27 +135,13 @@
   margin-bottom: 0.5rem;
 }
 
-.gameCard p,
-.gameCard a {
-  margin: 0.25rem 0;
-  font-size: 0.9rem;
-  min-height: 2rem; /* Garante a mesma altura mínima */
-  display: flex; /* Permite o alinhamento vertical */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+.gameCard > div {
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.gameCard a {
-  color: #fbf8f4;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.gameCard a:hover {
-  color: #dcd3c9;
-}
-
-/* Link do carrinho sem fundo */
 .cartLink {
   position: absolute;
   bottom: 2rem;
@@ -185,4 +166,69 @@
 .cartLink img {
   width: 60px;
   height: 60px;
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column;
+  }
+  .userInfo,
+  .gamesInfo {
+    padding: 2rem;
+  }
+  .userInfo h2,
+  .userInfo p,
+  .actionButtons {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gamesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .gameCard img {
+    width: 100%;
+    height: auto;
+  }
+  .cartLink {
+    width: 60px;
+    height: 60px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .cartLink img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .userInfo {
+    align-items: center;
+  }
+  .userInfo h2,
+  .userInfo p,
+  .actionButtons {
+    padding-left: 0;
+    text-align: center;
+  }
+  .actionButtons {
+    align-items: center;
+  }
+  .userInfo h2 {
+    font-size: 2rem;
+  }
+  .userInfo p {
+    font-size: 1.2rem;
+  }
+  .actionButton {
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 220px;
+  }
+  .gamesGrid {
+    grid-template-columns: 1fr;
+  }
 }

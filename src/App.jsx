@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import HomeScreen from "./components/HomeScreen/HomeScreen.jsx";
 import LoginScreen from "./components/LoginScreen/LoginScreen.jsx";
 import StoreScreen from "./components/StoreScreen/StoreScreen.jsx";
-import PopularScreen from "./components/PopularScreen/PopularScreen.jsx"; // Importa a nova tela
+import PopularScreen from "./components/PopularScreen/PopularScreen.jsx";
 import "./App.css";
 
 function App() {
-  // Adicionado 'popular' aos estados possíveis
   const [currentPage, setCurrentPage] = useState("login");
 
   const handleLoginSuccess = () => {
@@ -15,6 +14,7 @@ function App() {
 
   const handleNavigation = (page) => {
     setCurrentPage(page);
+    window.scrollTo(0, 0);
   };
 
   const renderPage = () => {
@@ -23,7 +23,6 @@ function App() {
         return <LoginScreen onLoginSuccess={handleLoginSuccess} />;
       case "store":
         return <StoreScreen onNavigate={handleNavigation} />;
-      // Adicionado o case para a página de populares
       case "popular":
         return <PopularScreen onNavigate={handleNavigation} />;
       case "profile":

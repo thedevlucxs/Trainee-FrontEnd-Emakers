@@ -12,8 +12,9 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 2rem;
-  /* Cor da borda alterada para combinar com o novo texto */
   border-bottom: 1px solid #fbf8f3;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .gameDameInfo {
@@ -82,4 +83,28 @@
 .copyright p {
   margin: 0;
   color: #4b626c;
+}
+
+/* --- ADICIONADO PARA RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
+  }
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .gameDameInfo {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .logo {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .explore,
+  .contact {
+    align-items: center;
+  }
 }

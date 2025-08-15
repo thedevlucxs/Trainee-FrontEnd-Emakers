@@ -31,7 +31,6 @@
   align-items: center;
 }
 
-/* Estilo para alternar a ordem */
 .gameCard.reverse {
   flex-direction: row-reverse;
 }
@@ -86,8 +85,8 @@
 
 .cartButton {
   position: absolute;
-  bottom: 10px; /* Posição na parte inferior */
-  right: 10px; /* Afastado da borda direita */
+  bottom: 10px;
+  right: 10px;
   width: 75px;
   height: 75px;
   border: none;
@@ -96,7 +95,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .cartButton:hover {
@@ -106,4 +105,28 @@
 .cartButton img {
   width: 75px;
   height: 75px;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 2rem 1.5rem 6rem 1.5rem;
+  }
+  .gameCard {
+    flex-direction: column !important;
+    gap: 1.5rem;
+  }
+  .gameImage {
+    width: 100%;
+    height: auto;
+  }
+  .cartButton {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+  .cartButton img {
+    width: 60px;
+    height: 60px;
+  }
 }

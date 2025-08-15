@@ -6,10 +6,8 @@ import Footer from "../Footer/Footer";
 
 // --- ÍCONES ---
 import carrinhoIcon from "/src/assets/icons/carrinhoLogo.svg";
-import precoIcon from "/src/assets/icons/preco.svg";
-import descontoIcon from "/src/assets/icons/desconto.svg";
 
-// --- IMAGENS HORIZONTAIS PARA O CARROSSEL HERO ---
+// --- IMAGENS ---
 import daysGoneImage from "/src/assets/horizontal/daysgone.jpg";
 import godOfWarHorizontalImage from "/src/assets/horizontal/godofwar.png";
 import horizonImage from "/src/assets/horizontal/horizonzerodawn.png";
@@ -22,8 +20,6 @@ import groundedImage from "/src/assets/horizontal/grounded.jpg";
 import eldenRingImage from "/src/assets/horizontal/eldenring.jpg";
 import fc26Image from "/src/assets/horizontal/fc26.jpg";
 import assettoCorsaImage from "/src/assets/horizontal/asettocorsa.jpg";
-
-// --- IMAGENS VERTICAIS PARA O CARROSSEL DE LANÇAMENTOS ---
 import spongebobImage from "/src/assets/vertical/spongebob.png";
 import deathStrandingImage from "/src/assets/vertical/death-stranding.png";
 import spellforceImage from "/src/assets/vertical/spellforce.png";
@@ -31,6 +27,7 @@ import deliverUsMarsImage from "/src/assets/vertical/deliver-us-mars.png";
 import perishVerticalImage from "/src/assets/vertical/perish.png";
 import godOfWarVerticalImage from "/src/assets/vertical/god-of-war.png";
 
+// --- DADOS DOS JOGOS ---
 const allHeroGames = [
   {
     id: 1,
@@ -197,7 +194,33 @@ function StoreScreen({ onNavigate }) {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: true,
+          centerPadding: "20px",
+        },
+      },
+    ],
   };
+
+  const renderGameCard = (game, cardStyle) => (
+    <div className={`${styles.heroCard} ${cardStyle}`}>
+      <img src={game.image} alt={game.title} />
+      <div className={styles.priceBox}>
+        {game.discount && (
+          <div className={styles.discountBadge}>{game.discount}</div>
+        )}
+        <div className={styles.priceValue}>{game.price}</div>
+      </div>
+    </div>
+  );
 
   return (
     <div className={styles.storeContainer}>
@@ -208,86 +231,11 @@ function StoreScreen({ onNavigate }) {
             {heroSlides.map((slide, index) => (
               <div key={index} className={styles.heroGrid}>
                 <div className={styles.heroGridLeft}>
-                  <div className={styles.heroCardSmall}>
-                    <img src={slide.sideTop.image} alt={slide.sideTop.title} />
-                    <div className={styles.priceBox}>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={descontoIcon}
-                          alt="Desconto"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.discountValue}>
-                          {slide.sideTop.discount}
-                        </span>
-                      </div>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={precoIcon}
-                          alt="Preço"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.priceValue}>
-                          {slide.sideTop.price}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.heroCardSmall}>
-                    <img
-                      src={slide.sideBottom.image}
-                      alt={slide.sideBottom.title}
-                    />
-                    <div className={styles.priceBox}>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={descontoIcon}
-                          alt="Desconto"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.discountValue}>
-                          {slide.sideBottom.discount}
-                        </span>
-                      </div>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={precoIcon}
-                          alt="Preço"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.priceValue}>
-                          {slide.sideBottom.price}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  {renderGameCard(slide.sideTop, styles.heroCardSmall)}
+                  {renderGameCard(slide.sideBottom, styles.heroCardSmall)}
                 </div>
                 <div className={styles.heroGridRight}>
-                  <div className={styles.heroCardLarge}>
-                    <img src={slide.main.image} alt={slide.main.title} />
-                    <div className={styles.priceBox}>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={descontoIcon}
-                          alt="Desconto"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.discountValue}>
-                          {slide.main.discount}
-                        </span>
-                      </div>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={precoIcon}
-                          alt="Preço"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.priceValue}>
-                          {slide.main.price}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  {renderGameCard(slide.main, styles.heroCardLarge)}
                 </div>
               </div>
             ))}
@@ -307,24 +255,12 @@ function StoreScreen({ onNavigate }) {
                       className={styles.releaseImage}
                     />
                     <div className={styles.priceBox}>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={descontoIcon}
-                          alt="Desconto"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.discountValue}>
+                      {game.discount && (
+                        <div className={styles.discountBadge}>
                           {game.discount}
-                        </span>
-                      </div>
-                      <div className={styles.iconWithValue}>
-                        <img
-                          src={precoIcon}
-                          alt="Preço"
-                          className={styles.priceIcon}
-                        />
-                        <span className={styles.priceValue}>{game.price}</span>
-                      </div>
+                        </div>
+                      )}
+                      <div className={styles.priceValue}>{game.price}</div>
                     </div>
                   </div>
                 </div>
@@ -336,7 +272,7 @@ function StoreScreen({ onNavigate }) {
           </a>
         </div>
       </main>
-      <Footer />
+      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

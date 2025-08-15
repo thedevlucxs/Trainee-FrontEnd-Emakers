@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./HomeScreen.module.css";
-import Navbar from "../Navbar/Navbar"; // Importe o novo componente
-import Footer from "../Footer/Footer"; // Importando o Footer
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import StarRating from "../StarRating/StarRating";
 
-// Importando os ícones da pasta assets
+// Ícones
 import carrinhoLogo from "../../assets/icons/carrinhoLogo.svg";
 import lapisIcon from "../../assets/icons/Lápis.svg";
 import lixeiraIcon from "../../assets/icons/Lixeira.svg";
@@ -15,33 +16,19 @@ import godOfWarImage from "../../assets/vertical/god-of-war.png";
 import deathStrandingImage from "../../assets/vertical/death-stranding.png";
 
 const games = [
-  { id: 1, title: "SpongeBob", progress: "100/100", imageUrl: spongebobImage },
-  {
-    id: 2,
-    title: "Deliver Us Mars",
-    progress: "95/100",
-    imageUrl: deliverUsMarsImage,
-  },
-  { id: 3, title: "God of War", progress: "75/100", imageUrl: godOfWarImage },
-  {
-    id: 4,
-    title: "Death Stranding",
-    progress: null,
-    imageUrl: deathStrandingImage,
-  },
+  { id: 1, title: "SpongeBob", rating: 5, imageUrl: spongebobImage },
+  { id: 2, title: "Deliver Us Mars", rating: 4, imageUrl: deliverUsMarsImage },
+  { id: 3, title: "God of War", rating: 3, imageUrl: godOfWarImage },
+  { id: 4, title: "Death Stranding", rating: 0, imageUrl: deathStrandingImage },
 ];
 
-// 1. Receba a propriedade { onNavigate }
 function HomeScreen({ onNavigate }) {
-  // Função para lidar com o clique do botão de excluir conta
   const handleDeleteAccount = () => {
-    // Adicione aqui a lógica para excluir a conta se necessário
-    onNavigate("login"); // Navega para a tela de login
+    onNavigate("login");
   };
 
   return (
     <div className={styles.pageContainer}>
-      {/* 2. Passe a propriedade para a Navbar */}
       <Navbar onNavigate={onNavigate} />
       <main className={styles.mainContent}>
         <section className={styles.userInfo}>
@@ -56,7 +43,7 @@ function HomeScreen({ onNavigate }) {
             </button>
             <button
               className={`${styles.actionButton} ${styles.destructiveButton}`}
-              onClick={handleDeleteAccount} // Adicionado o onClick
+              onClick={handleDeleteAccount}
             >
               Excluir Conta
               <img src={lixeiraIcon} alt="Excluir Conta" />
@@ -76,11 +63,7 @@ function HomeScreen({ onNavigate }) {
             {games.map((game) => (
               <div key={game.id} className={styles.gameCard}>
                 <img src={game.imageUrl} alt={game.title} />
-                {game.progress ? (
-                  <p>{game.progress}</p>
-                ) : (
-                  <a href="#">Adicionar Avaliação</a>
-                )}
+                <StarRating initialRating={game.rating} />
               </div>
             ))}
           </div>
@@ -89,7 +72,7 @@ function HomeScreen({ onNavigate }) {
           </a>
         </aside>
       </main>
-      <Footer /> {/* Footer adicionado */}
+      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

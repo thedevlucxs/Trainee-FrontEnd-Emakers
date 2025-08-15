@@ -1,0 +1,23 @@
+.starRating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #ccc;
+  padding: 0.1rem;
+  transition: color 0.2s;
+}
+
+.star.on {
+  color: #ffc107;
+}
+
+.star.off {
+  color: #ccc;
+}

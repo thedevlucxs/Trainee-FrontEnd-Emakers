@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Footer.module.css";
 import logoIcon from "../../assets/icons/icon.svg"; // Reutilizando o ícone da logo
 
-function Footer() {
+function Footer({ onNavigate }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -16,9 +16,33 @@ function Footer() {
 
         <div className={styles.explore}>
           <h4>Explorar</h4>
-          <a href="#">Início</a>
-          <a href="#">Populares</a>
-          <a href="#">Conta</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate("store");
+            }}
+          >
+            Início
+          </a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate("popular");
+            }}
+          >
+            Populares
+          </a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate("profile");
+            }}
+          >
+            Conta
+          </a>
         </div>
 
         <div className={styles.contact}>

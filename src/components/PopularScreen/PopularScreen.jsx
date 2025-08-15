@@ -70,9 +70,9 @@ function PopularScreen({ onNavigate }) {
           <img src={carrinhoIcon} alt="Carrinho de compras" />
         </a>
       </main>
-      <Footer />
+      <Footer onNavigate={onNavigate} />
     </div>
   );
 }
 
-export default PopularScreen; // Atualizado
+export default PopularScreen;

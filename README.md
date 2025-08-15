@@ -10,7 +10,7 @@ Este repositório contém o código-fonte do front-end para a Game Dame, uma int
 
 A aplicação simula uma loja de jogos online, com telas para autenticação de usuário, vitrine de jogos, listagem de populares e um painel de conta do usuário. A navegação é construída no modelo de SPA (Single Page Application), proporcionando uma experiência de usuário rápida e fluida, sem recarregamentos de página.
 
-`![Screenshot da Aplicação](./screenshot.png)`
+![Screenshot da Aplicação](./screenshot.png)
 
 ## ✨ Funcionalidades
 

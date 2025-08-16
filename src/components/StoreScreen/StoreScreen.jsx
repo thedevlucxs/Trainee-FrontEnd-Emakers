@@ -233,28 +233,24 @@ function StoreScreen({ onNavigate }) {
       <Navbar onNavigate={onNavigate} />
       <main className={styles.mainContent}>
         <section className={styles.heroSection}>
-          <Slider {...heroSettings}>
-            {" "}
-            //usa as configurações para gerar o carrossel
-            {heroSlides.map((slide, index) => (
-              <div key={index} className={styles.heroGrid}>
-                {" "}
-                //slide principal com 3 jogos
-                <div className={styles.heroGridLeft}>
-                  {renderGameCard(slide.sideTop, styles.heroCardSmall)}
-                  {renderGameCard(slide.sideBottom, styles.heroCardSmall)}
+          {heroSlides.length > 0 && (
+            <Slider {...heroSettings}>
+              {heroSlides.map((slide, index) => (
+                <div key={index} className={styles.heroGrid}>
+                  <div className={styles.heroGridLeft}>
+                    {renderGameCard(slide.sideTop, styles.heroCardSmall)}
+                    {renderGameCard(slide.sideBottom, styles.heroCardSmall)}
+                  </div>
+                  <div className={styles.heroGridRight}>
+                    {renderGameCard(slide.main, styles.heroCardLarge)}
+                  </div>
                 </div>
-                <div className={styles.heroGridRight}>
-                  {renderGameCard(slide.main, styles.heroCardLarge)}
-                </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          )}
         </section>
 
         <div className={styles.releasesContainer}>
-          {" "}
-          //lançamentos
           <section className={styles.releasesSection}>
             <h2 className={styles.sectionTitle}>Lançamentos</h2>
             <Slider {...releasesSettings}>

@@ -71,7 +71,7 @@ Para rodar este projeto localmente, siga os passos abaixo.
 
 O projeto está organizado de forma a separar claramente as responsabilidades de cada parte do código:
 
-´´´
+```
 
 src
 ├── assets/ # Imagens, ícones, fontes e outros arquivos estáticos
@@ -84,7 +84,7 @@ src
 ├── main.jsx # Ponto de entrada da aplicação React
 └── index.css # Estilos globais
 
-´´´
+```
 
 ## 🧠 Conceitos de Arquitetura
 
